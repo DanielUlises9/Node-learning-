@@ -5,10 +5,12 @@ const express = require('express');
 const app = express();
 
 app.use(express.static('public'))
+app.use('/',express.static(__dirname+'bulma/css/bulma.css'))
+
 var visitas = 0
 //Mostarndo la imagen
 app.get('/',function(req,res){
-	res.send('<h1>Sobres</h1>')
+	res.sendFile(__dirname+'/index.html')
 	console.log('Sobres')
 })
 //Cuando abran la pagina, esta funcion respondera
